@@ -1,0 +1,18 @@
+{
+	"status": 1,
+	"result": {
+		"list": [{
+				"imgId": "201701",
+                "imgName": "life1",
+                "Image": "img/album/1.jpg"
+            },
+            {
+            	"imgId": "201702",
+                "imgName": "life2",
+                "Image": "img/album/2.jpg"
+            }
+            
+        ]
+	},
+	"message": ""
+}
