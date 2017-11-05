@@ -1,0 +1,220 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+
+/*公共部分 */
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+form,
+fieldset,
+input,
+blockquote,
+th,
+td {
+    margin: 0;
+    padding: 0;
+}
+
+
+/*   之前我采用*{margin:0; padding:0;},但是相对这里的写法，还是建议这里的写法，因为*代表所有的标签，每次读取这段代码的时候都要解析*号，所耗费的时间更长，虽然这里写的代码多一些，但是加载的速度比*要快。  */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+fieldset,
+img {
+    border: 0;
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+    font-style: normal;
+    font-weight: normal;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+caption,
+th {
+    text-align: left;
+}
+
+abbr,
+acronym {
+    border: 0;
+}
+
+html {
+    width: 100%;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: "微软雅黑";
+    font-size: 12px;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:focus {
+    outline: none;
+}
+
+span {
+    color: #000;
+}
+
+body {
+    background-color: #f5f5f5;
+    font-family: "微软雅黑";
+}
+
+ul,
+li {
+    list-style-type: none;
+    margin: 0;
+}
+
+input {
+    border: 0;
+    margin: 0;
+}
+
+input:focus {
+    outline: none;
+}
+
+div {
+    display: block;
+}
+
+
+/*html5*/
+
+article,
+aside,
+dialog,
+footer,
+header,
+section,
+footer,
+nav,
+figure,
+menu {
+    display: block
+}
+
+.clear {
+    clear: both;
+}
+
+
+/* 导航 */
+
+nav {
+    background-color: #fafafa
+}
+
+nav ul {
+    margin: 0 3%;
+    overflow: hidden;
+}
+
+nav ul li {
+    float: left;
+    height: 70px;
+    line-height: 70px;
+    position: relative;
+    cursor: pointer;
+}
+
+.nav>li>a:hover {
+    text-decoration: none;
+    background-color: transparent !important;
+}
+
+.nav>li>a {
+    display: block;
+    padding: 0 18px;
+    color: #474747;
+    font-size: 16px;
+    letter-spacing: .025em;
+    white-space: nowrap;
+    height: 70px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    padding: 0 17.5px !important;
+    font-family: "方正品尚黑";
+    @font-face {
+        font-family: '方正品尚黑';
+        src: url('方正品尚黑.ttf');
+        /* IE9 Compat Modes */
+        src: url('方正品尚黑.ttf') format('truetype'), /* Safari, Android, iOS */
+    }
+}
+
+.nav>li>i {
+    display: block;
+    margin: -1px auto 0;
+    width: 0;
+    height: 1px;
+    background-color: #322a7e;
+    transition: all ease-out .2s;
+    -ms-transition: all ease-out .2s;
+    -moz-transition: all ease-out .2s;
+    -webkit-transition: all ease-out .2s;
+    -o-transition: all ease-out .2s;
+}
+
+.nav>li:hover i,
+.nav>li.cur i {
+    width: 100%;
+}
+
+
+/* 底部 */
+
+footer {
+    width: 100%;
+    margin: 10px auto 0 auto;
+    text-align: center;
+}
+
+footer img {
+    display: block;
+    margin: 0 auto;
+}
