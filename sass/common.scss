@@ -181,9 +181,9 @@ nav ul li {
     font-family: "方正品尚黑";
     @font-face {
         font-family: '方正品尚黑';
-        src: url('方正品尚黑.ttf');
+        src: url('.../方正品尚黑.ttf');
         /* IE9 Compat Modes */
-        src: url('方正品尚黑.ttf') format('truetype'), /* Safari, Android, iOS */
+        src: url('../方正品尚黑.ttf') format('truetype'), /* Safari, Android, iOS */
     }
 }
 
