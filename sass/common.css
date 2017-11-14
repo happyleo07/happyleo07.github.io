@@ -170,14 +170,7 @@ nav ul li {
   padding: 0 17.5px !important;
   font-family: "Tahoma";
 }
-@font-face {
-  .nav > li > a {
-    font-family: '方正品尚黑';
-    src: url(".../方正品尚黑.ttf");
-    /* IE9 Compat Modes */
-    src: url("../方正品尚黑.ttf") format("truetype");
-  }
-}
+
 .nav > li > i {
   display: block;
   margin: -1px auto 0;
