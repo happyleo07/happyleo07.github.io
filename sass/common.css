@@ -17,19 +17,16 @@ blockquote,
 th,
 td {
   margin: 0;
-  padding: 0;
-}
+  padding: 0; }
 
 /*   之前我采用*{margin:0; padding:0;},但是相对这里的写法，还是建议这里的写法，因为*代表所有的标签，每次读取这段代码的时候都要解析*号，所耗费的时间更长，虽然这里写的代码多一些，但是加载的速度比*要快。  */
 table {
   border-collapse: collapse;
-  border-spacing: 0;
-}
+  border-spacing: 0; }
 
 fieldset,
 img {
-  border: 0;
-}
+  border: 0; }
 
 address,
 caption,
@@ -41,79 +38,63 @@ strong,
 th,
 var {
   font-style: normal;
-  font-weight: normal;
-}
+  font-weight: normal; }
 
 ol,
 ul {
-  list-style: none;
-}
+  list-style: none; }
 
 caption,
 th {
-  text-align: left;
-}
+  text-align: left; }
 
 abbr,
 acronym {
-  border: 0;
-}
+  border: 0; }
 
 html {
-  width: 100%;
-}
+  width: 100%; }
 
 * {
   padding: 0px;
   margin: 0px;
   font-family: "微软雅黑";
-  font-size: 12px;
-}
+  font-size: 12px; }
 
 a {
   text-decoration: none;
-  color: #000;
-}
+  color: #000; }
 
 a:link {
-  text-decoration: none;
-}
+  text-decoration: none; }
 
 a:hover {
-  text-decoration: none;
-}
+  text-decoration: none; }
 
 a:focus {
-  outline: none;
-}
+  outline: none; }
 
 span {
-  color: #000;
-}
+  color: #000; }
 
 body {
   background-color: #f5f5f5;
-  font-family: "微软雅黑";
-}
+  font-family: "微软雅黑"; }
 
 ul,
 li {
   list-style-type: none;
-  margin: 0;
-}
+  margin: 0; }
 
 input {
   border: 0;
-  margin: 0;
-}
+  margin: 0; }
 
 input:focus {
-  outline: none;
-}
+  outline: none; }
 
 div {
-  display: block;
-}
+  display: block; }
 
 /*html5*/
 article,
@@ -126,79 +107,232 @@ footer,
 nav,
 figure,
 menu {
-  display: block;
-}
+  display: block; }
 
 .clear {
-  clear: both;
-}
+  clear: both; }
 
 /* 导航 */
 nav {
-  background-color: #fafafa;
-}
+  background-color: #fafafa; }
 
 nav ul {
   margin: 0 3%;
-  overflow: hidden;
-}
-
-nav ul li {
-  float: left;
-  height: 70px;
-  line-height: 70px;
-  position: relative;
-  cursor: pointer;
-}
+  overflow: hidden; }
+  nav ul li {
+    float: left;
+    height: 70px;
+    line-height: 70px;
+    position: relative;
+    cursor: pointer; }
+  nav ul li > a {
+    display: block;
+    padding: 0 18px;
+    color: #474747;
+    font-size: 16px;
+    letter-spacing: .025em;
+    white-space: nowrap;
+    height: 70px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    padding: 0 17.5px !important;
+    font-family: "Tahoma"; }
+  nav ul li > i {
+    display: block;
+    margin: -1px auto 0;
+    width: 0;
+    height: 1px;
+    background-color: #322a7e;
+    transition: all ease-out .2s;
+    -ms-transition: all ease-out .2s;
+    -moz-transition: all ease-out .2s;
+    -webkit-transition: all ease-out .2s;
+    -o-transition: all ease-out .2s; }
 
 .nav > li > a:hover {
   text-decoration: none;
   background-color: transparent !important;
-}
-
-.nav > li > a {
-  display: block;
-  padding: 0 18px;
-  color: #474747;
-  font-size: 16px;
-  letter-spacing: .025em;
-  white-space: nowrap;
-  height: 70px;
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  padding: 0 17.5px !important;
-  font-family: "Tahoma";
-}
-
-.nav > li > i {
-  display: block;
-  margin: -1px auto 0;
-  width: 0;
-  height: 1px;
-  background-color: #322a7e;
-  transition: all ease-out .2s;
-  -ms-transition: all ease-out .2s;
-  -moz-transition: all ease-out .2s;
-  -webkit-transition: all ease-out .2s;
-  -o-transition: all ease-out .2s;
-}
+  color: #474747; }
 
 .nav > li:hover i,
 .nav > li.cur i {
-  width: 100%;
-}
+  width: 100%; }
 
 /* 底部 */
 footer {
   width: 100%;
   margin: 10px auto 0 auto;
-  text-align: center;
-}
+  text-align: center; }
 
 footer img {
   display: block;
-  margin: 0 auto;
-}
+  margin: 0 auto; }
+
+/*显示隐藏函数*/
+.block {
+  display: block; }
+
+.hidden {
+  display: none; }
+
+.item-1 {
+  width: 2em; }
+
+.item-2 {
+  width: 4em; }
+
+.item-3 {
+  width: 6em; }
+
+.item-1 {
+  width: 2em; }
+
+.item-2 {
+  width: 4em; }
+
+.span1, .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9, .span10, .span11, .span12 {
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px; }
+
+.span1 {
+  width: 60px; }
+
+.span2 {
+  width: 140px; }
+
+.span3 {
+  width: 220px; }
+
+.span4 {
+  width: 300px; }
+
+.span5 {
+  width: 380px; }
+
+.span6 {
+  width: 460px; }
+
+.span7 {
+  width: 540px; }
+
+.span8 {
+  width: 620px; }
+
+.span9 {
+  width: 700px; }
+
+.span10 {
+  width: 780px; }
+
+.span11 {
+  width: 860px; }
+
+.span12 {
+  width: 940px; }
+
+.while-5 {
+  width: 25px; }
+
+.while-4 {
+  width: 24px; }
+
+.while-3 {
+  width: 23px; }
+
+.while-2 {
+  width: 22px; }
+
+.while-1 {
+  width: 21px; }
+
+.author-bro .photo-adam {
+  background: url("/images/avatars/adam.png") no-repeat; }
+.author-bro .photo-john {
+  background: url("/images/avatars/john.png") no-repeat; }
+.author-bro .photo-wynn {
+  background: url("/images/avatars/wynn.png") no-repeat; }
+.author-bro .photo-mason {
+  background: url("/images/avatars/mason.png") no-repeat; }
+.author-bro .photo-kuroir {
+  background: url("/images/avatars/kuroir.png") no-repeat; }
+
+.test {
+  content: just fuck!; }
+
+.test1 {
+  content: "ohoh"; }
+
+.test {
+  text: ASA;
+  text: adsd; }
+
+.oot {
+  width: 50%; }
+
+.oor {
+  width: 12px; }
+
+.ood {
+  width: 13px; }
+
+.ood1 {
+  width: 13px; }
+
+.ood2 {
+  width: 8em; }
+
+.footer11 {
+  width: 8.3px; }
+
+.ood11 {
+  width: 1%; }
+
+.ood11 {
+  width: 5px; }
+
+.odd11 {
+  width: 0.9047800653; }
+
+.odd11 {
+  width: 5; }
+
+.odd11 {
+  border: 4px solid blue; }
+
+.ood1 {
+  margin: 1px 2px 4px 2px; }
+
+.ood1 {
+  background: blue, red, #abc, #edf; }
+
+.border {
+  border: 1px solid green, 2px dashed blue, 3px dotted red; }
+
+.botton {
+  position: relative;
+  left: 20px;
+  top: 30px; }
+
+.btn-drible {
+  color: #4b5998;
+  background: #171515;
+  border: 1px solid #55acee; }
+
+.btn-dribble {
+  color: #ea4c89; }
+
+.btn-facebook {
+  color: #4b5998; }
+
+.btn-github {
+  color: #171515; }
+
+.btn-google {
+  color: #db4437; }
+
+.btn-twitter {
+  color: #55acee; }
 
 /*# sourceMappingURL=common.css.map */

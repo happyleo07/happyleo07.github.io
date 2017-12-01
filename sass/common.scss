@@ -50,9 +50,11 @@ var {
     font-weight: normal;
 }
 
+//定义初始变量
+$null:none;
 ol,
 ul {
-    list-style: none;
+    list-style: $null;
 }
 
 caption,
@@ -77,20 +79,20 @@ html {
 }
 
 a {
-    text-decoration: none;
+    text-decoration: $null;
     color: #000;
 }
 
 a:link {
-    text-decoration: none;
+    text-decoration: $null;
 }
 
 a:hover {
-    text-decoration: none;
+    text-decoration: $null;
 }
 
 a:focus {
-    outline: none;
+    outline: $null;
 }
 
 span {
@@ -104,7 +106,7 @@ body {
 
 ul,
 li {
-    list-style-type: none;
+    list-style-type: $null;
     margin: 0;
 }
 
@@ -114,7 +116,7 @@ input {
 }
 
 input:focus {
-    outline: none;
+    outline: $null;
 }
 
 div {
@@ -148,57 +150,54 @@ nav {
     background-color: #fafafa
 }
 
-nav ul {
-    margin: 0 3%;
-    overflow: hidden;
-}
-
+// 定义变量高度
 $height:70px;
-nav ul li {
-    float: left;
-    height: $height;
-    line-height: $height;
-    position: relative;
-    cursor: pointer;
-}
-
-.nav>li>a:hover {
-    text-decoration: none;
-    background-color: transparent !important;
-}
-
-.nav>li>a {
-    display: block;
-    padding: 0 18px;
-    color: #474747;
-    font-size: 16px;
-    letter-spacing: .025em;
-    white-space: nowrap;
-    height: $height;
+@mixin box-size {
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
-    padding: 0 17.5px !important;
-    font-family: "Tahoma";
-    // @font-face {
-    //     font-family: '方正品尚黑';
-    //     src: url('.../方正品尚黑.ttf');
-    //     /* IE9 Compat Modes */
-    //     src: url('../方正品尚黑.ttf') format('truetype'), /* Safari, Android, iOS */
-    // }
 }
 
-.nav>li>i {
-    display: block;
-    margin: -1px auto 0;
-    width: 0;
-    height: 1px;
-    background-color: #322a7e;
-    transition: all ease-out .2s;
-    -ms-transition: all ease-out .2s;
-    -moz-transition: all ease-out .2s;
-    -webkit-transition: all ease-out .2s;
-    -o-transition: all ease-out .2s;
+nav ul {
+    margin: 0 3%;
+    overflow: hidden;
+    li {
+        float: left;
+        height: $height;
+        line-height: $height;
+        position: relative;
+        cursor: pointer;
+    }
+    li>a {
+        display: block;
+        padding: 0 18px;
+        color: #474747;
+        font-size: 16px;
+        letter-spacing: .025em;
+        white-space: nowrap;
+        height: $height;
+        @include box-size;
+        padding: 0 17.5px !important;
+        font-family: "Tahoma";
+    }
+    li>i {
+        display: block;
+        margin: -1px auto 0;
+        width: 0;
+        height: 1px;
+        background-color: #322a7e;
+        transition: all ease-out .2s;
+        -ms-transition: all ease-out .2s;
+        -moz-transition: all ease-out .2s;
+        -webkit-transition: all ease-out .2s;
+        -o-transition: all ease-out .2s;
+    }
+}
+
+.nav>li>a:hover {
+    text-decoration: $null;
+    background-color: transparent !important;
+    color: #474747;
 }
 
 .nav>li:hover i,
@@ -218,4 +217,230 @@ footer {
 footer img {
     display: block;
     margin: 0 auto;
+}
+
+//显示隐藏函数
+
+/*显示隐藏函数*/
+
+@mixin blockOrHidden($boolean:true) {
+    @if $boolean {
+        @debug "$boolean is #{$boolean}";
+        display: block;
+    }
+    @else {
+        @debug "$boolean is #{$boolean}";
+        display: none;
+    }
+}
+
+.block {
+    @include blockOrHidden();
+}
+
+.hidden {
+    @include blockOrHidden(false);
+}
+
+// 循环测试代码
+@for $i from 1 through 3 {
+    .item-#{$i} {
+        width: 2em * $i;
+    }
+}
+
+@for $i from 1 to 3 {
+    .item-#{$i} {
+        width: 2em * $i;
+    }
+}
+
+// 网格系统生成格子循环
+$grid-prefix: span !default;
+$grid-width: 60px !default;
+$grid-gutter: 20px !default;
+%grid {
+    float: left;
+    margin-left: $grid-gutter / 2;
+    margin-right: $grid-gutter / 2;
+}
+
+@for $i from 1 through 12 {
+    .#{$grid-prefix}#{$i} {
+        width: $grid-width * $i + $grid-gutter * ($i - 1);
+        @extend %grid;
+    }
+}
+
+// while循环测试
+$types: 5;
+$type-width: 20px;
+@while $types>0 {
+    .while-#{$types} {
+        width: $type-width + $types;
+    }
+    $types: $types - 1;
+}
+
+// each 循环遍历测试
+$list: adam john wynn mason kuroir;
+@mixin author-images {
+    @each $author in $list {
+        .photo-#{$author} {
+            background: url("/images/avatars/#{$author}.png") no-repeat;
+        }
+    }
+}
+
+.author-bro {
+    @include author-images;
+}
+
+// 字符串函数测试
+.test {
+    content: unquote("just fuck!");
+}
+
+.test1 {
+    content: quote( ohoh);
+}
+
+.test {
+    text: to-upper-case(asa);
+    text: to-lower-case(ADSD);
+}
+
+// 数字函数测试
+.oot {
+    width: percentage(5px / 10px);
+}
+
+.oor {
+    width: round(12.4px)
+}
+
+.ood {
+    width: ceil(12.3px);
+}
+
+.ood1 {
+    width: floor(13.3px);
+}
+
+.ood2 {
+    width: floor(8.8em);
+}
+
+.footer11 {
+    width: abs(-8.3px);
+}
+
+.ood11 {
+    width: min(1, 1%);
+}
+
+.ood11 {
+    width: max(2px, 5px);
+}
+
+.odd11 {
+    width: random();
+}
+
+.odd11 {
+    width: length(5px 88px (border 6px solid) 4em (border 5em solid));
+}
+
+.odd11 {
+    border: nth(border-bottom (4px solid blue) black, 2);
+}
+
+.ood1 {
+    margin: join(1px 2px, 4px 2px, space);
+}
+
+.ood1 {
+    background: join((blue, red), (#abc, #edf), comma);
+}
+
+.border {
+    border: zip(1px 2px 3px, solid dashed dotted, green blue red);
+}
+
+// unitless函数
+@mixin adjust-location($x,
+$y) {
+    @if unitless($x) {
+        $x: 1px * $x;
+    }
+    @if unitless($y) {
+        $y: 1px * $y;
+    }
+    position: relative;
+    left: $x;
+    top: $y;
+}
+
+.botton {
+    @include adjust-location(20px,
+    30);
+}
+
+$theme-color:( default: ( bgcolor: #fff, text-color: #444, link-color: #39f),
+primary:( bgcolor: #000, text-color:#fff, link-color: #93f),
+negative: ( bgcolor: #f36, text-color: #fefefe, link-color: #d4e));
+// maps函数
+$social-colors: ( dribble: #ea4c89,
+facebook: #4b5998,
+github: #171515,
+google:#db4437,
+twitter: #55acee);
+.btn-drible {
+    color: map-get($social-colors, facebook);
+    background: map-get($social-colors, github);
+    border: 1px solid map-get($social-colors, twitter);
+}
+
+@if map-has-key($social-colors,
+faceboo) {
+    .btn-facebook {
+        color: map-get($social-colors, facebook);
+    }
+}
+
+@else {
+    @warn "No color found for faceboo in $social-colors map. Property ommitted."
+}
+
+@function colors($color) {
+    @if not map-has-key($social-colors,
+    $color) {
+        @warn "No color found for `#{$color}` in $social-colors map. Property omitted."
+    }
+    @return map-get($social-colors,
+    $color);
+}
+
+.btn-dribble {
+    color: colors(dribble);
+}
+
+.btn-facebook {
+    color: colors(facebook);
+}
+
+.btn-github {
+    color: colors(github);
+}
+
+.btn-google {
+    color: colors(google);
+}
+
+.btn-twitter {
+    color: colors(twitter);
+}
+
+.btn-weibo {
+    color: colors(weibo);
 }
