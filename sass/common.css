@@ -119,9 +119,7 @@ nav > ul {
     float: left;
     height: 70px;
     position: relative;
-    cursor: pointer;
-    display: flex !important;
-    align-items: center; }
+    cursor: pointer; }
   nav > ul li > a {
     display: block;
     padding: 0 18px;
@@ -291,7 +289,7 @@ footer img {
   width: 5px; }
 
 .odd11 {
-  width: 0.2825455006; }
+  width: 0.2024875787; }
 
 .odd11 {
   width: 5; }

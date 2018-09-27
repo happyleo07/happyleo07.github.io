@@ -100,7 +100,7 @@
 
 }());
 $(document).ready(function() {
-    $("nav .nav").append("<li><a href ='index.html'>Index</a><i></i></li><li><a href ='page2.html'>Photos</a><i></i></li><li><a href = 'page3.html'>Basketball</a><i></i></li><li><div id='tp-weather-widget' style='float:left'></div></li>");
+    $("nav .nav").append("<li><a href ='index.html'>Index</a><i></i></li><li><a href ='page2.html'>Photos</a><i></i></li><li><a href = 'page3.html'>Basketball</a><i></i></li><li><div id='tp-weather-widget' style='float:left;margin-top:18px'></div></li>");
     $('.nav li a').each(function() {
         if ($($(this))[0].href == String(window.location))
             $(this).parent().addClass('cur');
