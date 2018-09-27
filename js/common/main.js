@@ -100,7 +100,7 @@
 
 }());
 $(document).ready(function() {
-    $("nav").append(" <ul class='nav'><li><a style ='margin-right: 20px;'><img src = 'img/home.png' width ='32'></a></li><li><a href ='index.html'>Index</a><i></i></li><li><a href ='page2.html'>Photos</a><i></i></li><li><a href = 'page3.html'>Basketball</a><i></i></li></ul >");
+    $("nav .nav").append("<li><a href ='index.html'>Index</a><i></i></li><li><a href ='page2.html'>Photos</a><i></i></li><li><a href = 'page3.html'>Basketball</a><i></i></li>");
     $('.nav li a').each(function() {
         if ($($(this))[0].href == String(window.location))
             $(this).parent().addClass('cur');
