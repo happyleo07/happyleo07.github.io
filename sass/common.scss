@@ -166,6 +166,8 @@ nav>ul {
         height: $height;
         position: relative;
         cursor: pointer;
+        display: flex !important;
+        align-items: center;
     }
     li>a {
         display: block;
@@ -178,6 +180,7 @@ nav>ul {
         @include box-size;
         padding: 0 17.5px !important;
         font-family: "Tahoma";
+        line-height: $height;
     }
     li>i {
         display: block;
@@ -191,10 +194,6 @@ nav>ul {
         -webkit-transition: all ease-out .2s;
         -o-transition: all ease-out .2s;
     }
-}
-
-.nav>li {
-    line-height: $height;
 }
 
 .nav>li>a:hover {

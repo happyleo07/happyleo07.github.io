@@ -119,7 +119,9 @@ nav > ul {
     float: left;
     height: 70px;
     position: relative;
-    cursor: pointer; }
+    cursor: pointer;
+    display: flex !important;
+    align-items: center; }
   nav > ul li > a {
     display: block;
     padding: 0 18px;
@@ -132,7 +134,8 @@ nav > ul {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     padding: 0 17.5px !important;
-    font-family: "Tahoma"; }
+    font-family: "Tahoma";
+    line-height: 70px; }
   nav > ul li > i {
     display: block;
     margin: -1px auto 0;
@@ -144,9 +147,6 @@ nav > ul {
     -moz-transition: all ease-out .2s;
     -webkit-transition: all ease-out .2s;
     -o-transition: all ease-out .2s; }
-
-.nav > li {
-  line-height: 70px; }
 
 .nav > li > a:hover {
   text-decoration: none;
@@ -291,7 +291,7 @@ footer img {
   width: 5px; }
 
 .odd11 {
-  width: 0.1943860396; }
+  width: 0.2825455006; }
 
 .odd11 {
   width: 5; }
