@@ -74,9 +74,6 @@ a:hover {
 a:focus {
   outline: none; }
 
-span {
-  color: #000; }
-
 body {
   background-color: #f5f5f5;
   font-family: "微软雅黑"; }
@@ -116,15 +113,14 @@ menu {
 nav {
   background-color: #fafafa; }
 
-nav ul {
+nav > ul {
   margin: 0 3%; }
-  nav ul li {
+  nav > ul li {
     float: left;
     height: 70px;
-    line-height: 70px;
     position: relative;
     cursor: pointer; }
-  nav ul li > a {
+  nav > ul li > a {
     display: block;
     padding: 0 18px;
     color: #474747;
@@ -137,7 +133,7 @@ nav ul {
     -moz-box-sizing: border-box;
     padding: 0 17.5px !important;
     font-family: "Tahoma"; }
-  nav ul li > i {
+  nav > ul li > i {
     display: block;
     margin: -1px auto 0;
     width: 0;
@@ -148,6 +144,9 @@ nav ul {
     -moz-transition: all ease-out .2s;
     -webkit-transition: all ease-out .2s;
     -o-transition: all ease-out .2s; }
+
+.nav > li {
+  line-height: 70px; }
 
 .nav > li > a:hover {
   text-decoration: none;
@@ -292,7 +291,7 @@ footer img {
   width: 5px; }
 
 .odd11 {
-  width: 0.4087624653; }
+  width: 0.1943860396; }
 
 .odd11 {
   width: 5; }

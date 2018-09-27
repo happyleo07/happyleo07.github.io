@@ -96,7 +96,7 @@ a:focus {
 }
 
 span {
-    color: #000;
+    // color: #000;
 }
 
 body {
@@ -158,13 +158,12 @@ $height:70px;
     -moz-box-sizing: border-box;
 }
 
-nav ul {
+nav>ul {
     margin: 0 3%;
     // overflow: hidden;
     li {
         float: left;
         height: $height;
-        line-height: $height;
         position: relative;
         cursor: pointer;
     }
@@ -192,6 +191,10 @@ nav ul {
         -webkit-transition: all ease-out .2s;
         -o-transition: all ease-out .2s;
     }
+}
+
+.nav>li {
+    line-height: $height;
 }
 
 .nav>li>a:hover {
